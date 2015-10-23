@@ -24,7 +24,11 @@ function isTyler(name) {
 
 
   //Code Here
-
+  var userName;
+function getName() {
+	userName = prompt("What is your name?");
+	return userName;
+}
 
 //Next Problem
 
@@ -34,7 +38,10 @@ function isTyler(name) {
 //then alerts "Welcome, " plus whatever the users name is.
 
   //Code Here
-
+function welcome() {
+	getName();
+	alert("Welcome, " + userName);
+}
 
 //Next problem
 
@@ -44,7 +51,7 @@ function isTyler(name) {
 //What is the difference between arguments and parameters?
 
   //Answer Here
-
+//Parameters belong to the function expression and they act as placeholders. When a function is called and it is given input where the parameters used to be, this input is called the argument.
 
 //Next problem
 
@@ -54,6 +61,9 @@ function isTyler(name) {
 
 
   //Answer Here
+  //falsy values: 0, null, NaN, false, "", undefined
+  //use the double equal signs (==) to check if something is false.
+  //e.g.   (problem == false)
 
 
 
@@ -64,13 +74,19 @@ function isTyler(name) {
 //Create a function called myName that returns your name
 
   //Code Here
+function myName() {
+	return userName;
+}
 
 //Now save the function definition of myName into a new variable called newMyName
 
   //Code Here
+  userName="d";
+  var newMyName = myName();
 
 //Now alert the result of invoking newMyName
 
+ alert(newMyName);
 
 
 //Next problem
@@ -80,9 +96,16 @@ function isTyler(name) {
 //Create a function called outerFn which returns an anonymous function which returns your name.
 
   //Code Here
+userName = "D";
+function outerFn() {
+		return function () {
+			return "nam";
+	};
+}
 
 //Now save the result of invoking outerFn into a variable called innerFn.
 
   //Code Here
-
+  var innerFn = outerFn();
 //Now invoke innerFn.
+console.log(innerFn());
