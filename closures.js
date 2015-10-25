@@ -1,5 +1,5 @@
 //Once you complete a problem, open up Chrome and check the answer in the console.
-/**
+
 var outer = function(){
   var name = 'Tyler';
   return function(){
@@ -150,7 +150,7 @@ var counter = function () {
 }
 
 counter();
--------------**/
+
 //Next Problem
 
 //
@@ -166,11 +166,31 @@ counter();
 //  funcArray[5]() //5
 //Hint: Don't let this fool you. Break down what's really happening here.
 
-//funcarray gets pushed an element
-//the function retrieves the length?
 
-var funcArray = [];
-console.log(funcArray[0].length);
+function countArray() {
+  var arr= [];
+
+  for (var i = 0; i < 6; i++) {
+    arr.push (
+      (function(j) {
+        return function() {
+          console.log(j);
+        }
+      })(i)
+    )
+  }
+
+  return arr;
+}
+
+var funcArray = countArray();
+
+funcArray[0]() //0
+funcArray[1]() //1
+funcArray[2]() //2
+funcArray[3]() //3
+funcArray[4]() //4
+funcArray[5]() //5
 
 
 
